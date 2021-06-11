@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import AppBar from './app-bar';
+import { ProductComponent } from './product/product.component';
+import { Product } from './Models';
+import axios from 'axios';
 
 function App() {
+  const [products, setProducts] = useState([]);
+
+
+  useEffect(()=>{
+   axios.get('https://fakestoreapi.com/products')
+   .then(successResponse => {
+      if (successResponse && successResponse.data){
+        setProducts(successResponse.data)
+      }
+   }).catch(errorResponse => {
+      console.log('unable to load products')
+   })
+  }, [])
+
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppBar />
+    <div className="search-results">
+      {products.map(product => <ProductComponent product={product}/>)}
+    </div>
+      
     </div>
   );
 }
