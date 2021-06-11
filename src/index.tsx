@@ -5,10 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { configureStore } from './redux-store/configureStore';
+import { history } from './utils/history';
 
 // Create redux store with history
 
-const store = configureStore({}, );
+const store = configureStore({}, history);
 
 ReactDOM.render(
   <Provider store={store} >

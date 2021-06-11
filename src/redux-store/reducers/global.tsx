@@ -1,3 +1,4 @@
+import { Action } from "redux";
 import { HIDE_LOADING_INDICATOR, SHOW_LOADING_INDICATOR } from "../action-constants";
 
 
@@ -5,7 +6,7 @@ const initialState = {
     loadingIndicator: false,
 }
 
-const globalReducer = (state = initialState, action) => {
+const globalReducer = (state = initialState, action:Action) => {
     switch (action.type) {
       case SHOW_LOADING_INDICATOR:
         state.loadingIndicator = true;
