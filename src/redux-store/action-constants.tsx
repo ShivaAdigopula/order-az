@@ -1,4 +1,4 @@
 export const LOAD_PRODUCTS:String = 'LOAD_PRODUCTS';
 export const SET_PRODUCTS:String = 'SET_PRODUCTS';
-export const DATA_FETCHING:String = 'DATA_FETCHING';
-export const DATA_ERROR:String = 'DATA_ERROR';
+export const SHOW_LOADING_INDICATOR:String = 'SHOW_LOADING_INDICATOR';
+export const HIDE_LOADING_INDICATOR:String = 'HIDE_LOADING_INDICATOR';

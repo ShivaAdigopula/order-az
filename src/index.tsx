@@ -3,13 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createStore } from 'redux';
-import productsReducer from './redux-store/reducers/products';
 import { Provider } from 'react-redux';
+import { configureStore } from './redux-store/configureStore';
 
 // Create redux store with history
 
-const store = createStore(productsReducer);
+const store = configureStore({}, );
 
 ReactDOM.render(
   <Provider store={store} >
@@ -24,3 +23,4 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+

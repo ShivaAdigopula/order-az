@@ -1,4 +1,4 @@
-import { LOAD_PRODUCTS, SET_PRODUCTS } from '../action-constants';
+import { SET_PRODUCTS } from '../action-constants';
 import { Product } from '../../Models';
 import { Action } from './../actions';
 
