@@ -2,6 +2,7 @@
  import { routerMiddleware } from 'connected-react-router';
  import createSagaMiddleware from 'redux-saga';
 import createReducer from './reducers';
+import { loadProductsSaga } from './saga/products-saga';
 
 
  
@@ -31,6 +32,7 @@ import createReducer from './reducers';
  
    /* add all sagas to middleWare here */
    /* sagaMiddleware.run(loginSaga); */
+   sagaMiddleware.run(loadProductsSaga);
  
  
  

@@ -1,6 +1,13 @@
 import { Product } from '../Models';
-import { HIDE_LOADING_INDICATOR, SET_PRODUCTS, SHOW_LOADING_INDICATOR } from './action-constants';
+import { HIDE_LOADING_INDICATOR, LOAD_PRODUCTS, SET_PRODUCTS, SHOW_LOADING_INDICATOR } from './action-constants';
 
+
+export function loadProducts(payload:Object) {
+    return {
+        type: LOAD_PRODUCTS,
+        payload,
+    }
+}
 
 export function setProducts(data:Array<Product>) {
     return {

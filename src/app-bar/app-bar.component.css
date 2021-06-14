@@ -1,5 +1,15 @@
 .appbar {
-    display: flex;
+    display: block;
     height: 3.5em;
     background-color: #2874f0;
+}
+
+.appbar-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    margin-left: 2em;
+    margin-right: 2em;
+    padding-top: 0.5em;
 }
