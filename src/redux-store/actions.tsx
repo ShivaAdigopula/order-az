@@ -1,5 +1,5 @@
 import { Product } from '../Models';
-import { HIDE_LOADING_INDICATOR, LOAD_PRODUCTS, SET_PRODUCTS, SHOW_LOADING_INDICATOR } from './action-constants';
+import { HIDE_LOADING_INDICATOR, LOAD_PRODUCTS, SET_PRODUCTS, SHOW_LOADING_INDICATOR, ADD_TO_CART } from './action-constants';
 
 
 export function loadProducts(payload:Object) {
@@ -13,6 +13,13 @@ export function setProducts(data:Array<Product>) {
     return {
         type: SET_PRODUCTS,
         payload: data,
+    }
+}
+
+export function addToCart(product:Product) {
+    return {
+        type: ADD_TO_CART,
+        payload: product,
     }
 }
 

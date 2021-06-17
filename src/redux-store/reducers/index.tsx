@@ -7,6 +7,7 @@
  import { history } from '../../utils/history';
 import productsReducer from './products';
 import globalReducer from './global';
+import { cartReducer } from './cart';
 
  
  /**
@@ -17,6 +18,7 @@ import globalReducer from './global';
      router: connectRouter(history),
      global: globalReducer,
      products: productsReducer,
+     cart: cartReducer,
      ...injectedReducers,
    });
  
