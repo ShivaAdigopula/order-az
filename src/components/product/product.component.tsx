@@ -13,7 +13,7 @@ export const ProductComponent: React.FunctionComponent<{ product: Product }> = (
             dispatch(addToCart(product));
         }
         setAddedToCart(!addedToCart);
-    }, [product, addedToCart])
+    }, [product, addedToCart, dispatch])
     return (<Card className="product-container" key={product.title}>
         <div className="product-image">
             <img src={product.image} width="150" height="200" alt="product" />
