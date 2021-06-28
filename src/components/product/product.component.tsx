@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import './product.component.css'
 import { Product } from './../../Models';
-import Button from '@material-ui/core/Button'
+import {Button, Card} from '@material-ui/core'
 import { useDispatch } from 'react-redux';
 import { addToCart } from './../../redux-store/actions';
 
 export const ProductComponent: React.FunctionComponent<{ product: Product }> = ({ product }) => {
     const [addedToCart, setAddedToCart] = useState(false);
     const dispatch = useDispatch();
-    function addToCartHandler(){
+    const addToCartHandler = useCallback(() =>{
         if (!addedToCart) {
             dispatch(addToCart(product));
         }
         setAddedToCart(!addedToCart);
-    }
-    return (<div className="product-container" key={product.title}>
+    }, [product, addedToCart])
+    return (<Card className="product-container" key={product.title}>
         <div className="product-image">
             <img src={product.image} width="150" height="200" alt="product" />
         </div>
@@ -29,5 +29,5 @@ export const ProductComponent: React.FunctionComponent<{ product: Product }> = (
                 </Button>
             </div>
         </div>
-    </div>)
+    </Card>)
 }

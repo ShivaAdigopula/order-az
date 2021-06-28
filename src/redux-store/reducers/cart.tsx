@@ -7,7 +7,7 @@ export const cartReducer = (state:Array<Product> = [], action:Action) => {
     switch (action.type) {
       case ADD_TO_CART:
         const {payload} = action;
-        return [...state, payload];
+        return [...new Set<Product>([...state, payload])];
       default:
         return state;
     }

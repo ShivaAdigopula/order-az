@@ -1,0 +1,16 @@
+.cart-product-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+    padding:0.5em;
+    border-bottom: 1px dashed #ccc;
+}
+
+.cart-product-title {
+    font-weight: 500;
+}
+
+.cart-product-price {
+    font-size:1.2em;
+}
